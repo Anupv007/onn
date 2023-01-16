@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayank Patel | Onngo</title>
+    <link rel="stylesheet" href="resources/css/style.css" type="text/css">
+
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,600;0,700;0,800;1,300&family=Nunito:wght@200;300;600&family=Roboto:wght@100;300;700&display=swap"
+        rel="stylesheet">
+
+    <!-- poppins  -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="resources/css/queries.css">
+
+    <!-- owl carousel  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+
+
+    <!-- ----------------- Action floating button ---------- -->
+
+        <div class="list-container">
+            <button class="more-button" onclick="action_btn_toggle()" aria-label="Menu Button">
+                <div class="menu-icon-wrapper">
+                    <div class="menu-icon-line half first"></div>
+                    <div class="menu-icon-line"></div>
+                    <div class="menu-icon-line half last"></div>
+                </div>
+            </button>
+            <ul class="more-button-list" onclick="action_btn_off()">
+                <a href="resources/doc/Mayank_Patel.vcf" download="Mayank_Patel">
+                    <li class="more-button-list-item">
+                        <i class="fa-solid fa-arrow-down"></i>
+                        <span>Save Contact</span>
+                    </li>
+                </a>
+    
+                <li class="more-button-list-item" onclick="showPopup(); action_btn_off()">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                    <span>Exchange Contact</span>
+                </li>
+                <li class="more-button-list-item" onclick="action_btn_off(); showPopup2()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-share">
+                        <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13" />
+                    </svg>
+                    <span>Give feedback</span>
+                </li>
+            </ul>
+        </div>
+    
+
+    <!-- ----------------- Action floating button End ------ -->
+
+    <!-- ------------ Popup forms ------------------  -->
+
+    <div class="exchange-contact-form popup">
+        
+        <div class="popup-mask" onclick="hidePopup()"></div>
+        <form action="" autocomplete="on">
+            <div class="popup_close-btn" onclick="hidePopup()"><i class="fa-solid fa-xmark"></i></div>
+            <h2 class="section-head">Exchange Contact</h2>
+            <div class="input-icons">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="fname" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="input-icons">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="email" name="email" placeholder="Your Email">
+            </div>
+            <div class="input-icons">
+                <i class="fa-solid fa-phone"></i>
+                <input type="tel" id="tel" name="tel" placeholder="Phone Number">
+            </div>
+            <div class="input-icons">
+                <i class="fa-solid fa-message"></i>
+                <textarea type="textarea" id="note" name="note" placeholder="Your Message" rows="5"></textarea>
+            </div>
+
+            <div class="input_fields_wrap">
+
+                <div class="social-dropdown">
+                    <select name="myselect[1]">
+                        <option>Instagram</option>
+                        <option>Facebook</option>
+                        <option>Linkedin</option>
+                        <option>Youtube</option>
+                    </select>
+                    <input type="text" name="mytext[1]">
+                </div>
+
+            </div>
+
+            <div class="popup-form-btn">
+                <div class="add_field_button btn">Add More</div>
+                <input type="submit" value="Submit" class="btn">
+            </div>
+        </form>
+    </div>
+
+    <!-- ------------ Popup forms End -------------  -->
+
+
+    <!-- ------------ Popup forms Feedback------------------  -->
+
+    <div class="exchange-contact-form feedback-pop">
+        
+        <div class="popup-mask" onclick="hidePopup2()"></div>
+        <form action="" autocomplete="on">
+            <div class="popup_close-btn" onclick="hidePopup2()"><i class="fa-solid fa-xmark"></i></div>
+            <h2 class="section-head">Feedback Form</h2>
+            <div class="input-icons">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="fname" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="input-icons">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="text" id="email" name="email" placeholder="Company">
+            </div>
+            <!-- <div class="input-icons">
+                <i class="fa-solid fa-phone"></i>
+                <input type="tel" id="tel" name="tel" placeholder="Phone Number">
+            </div> -->
+            <div class="input-icons">
+                <i class="fa-solid fa-message"></i>
+                <textarea type="textarea" id="note" name="note" placeholder="Your Feedback" rows="5"></textarea>
+            </div>
+            <div class="popup-form-btn">
+                <input type="submit" value="Submit" class="btn">
+            </div>
+
+        </form>
+    </div>
+<!-- ------------ Popup forms Feedback End------------------  -->
+
+
+    <header class="header">
+        <!-- top-bar  -->
+        <div class="top-bar">
+            <img class="onngo-logo" src="resources/img/onngo-logo.png" alt="">
+            <a href="#" class="btn btn-ghost">
+                Get your card
+            </a>
+        </div>
+
+        <div class="profile-img-box">
+            <!-- <div class="top-black-gradient"></div> -->
+            <img class="profile-img" src="resources/img/profile-img.jpeg" alt="">
+            <svg class="" preserveAspectRatio="xMinYMax meet" viewBox="0 0 246 57" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M 214.7168,6.1113281 C 195.65271,5.9023124 172.37742,11.948182 137.87305,32.529297 110.16613,49.05604 86.980345,56.862784 65.015625,57 H 65 v 1 H 246 V 11.453125 C 236.0775,8.6129313 226.15525,6.2367376 214.7168,6.1113281 Z"
+                    fill="#ffffff" clip-rule="evenodd" fill-rule="evenodd"></path>
+                <path d="M 0,35.773438 V 58 H 65 L 64.97852,57 C 43.192081,57.127508 22.605139,49.707997 0,35.773438 Z "
+                    fill="#ffffff" clip-rule="evenodd" fill-rule="evenodd"></path>
+                <path fill="#8F60DE" clip-rule="evenodd" fill-rule="evenodd"
+                    d="m 0,16.7221 v 19.052 C 45.4067,63.7643 82.6667,65.4583 137.873,32.5286 193.08,-0.401184 219.54,3.87965 246,11.4535 V 6.51403 C 185.24,-16.8661 135.913,29.331 97.6933,40.8564 59.4733,52.3818 33.6467,44.1494 0,16.7221 Z ">
+                </path>
+            </svg>
+        </div>
+
+
+
+        <!-- card-content (text) -->
+        <div class="card-content row">
+            <h3 class="person-name">Mayank Patel</h3>
+            <h4 class="person-profession">Entrepreneur</h4>
+            <h5 class="person-company">Deepwes Technology</h5>
+        </div>
+
+    </header>
+    <!-- <div class="hero-background"></div>
+    <header>
+
+        <div class="profile-card">
+            <div class="profile-img"><img src="resources/img/img-mine.png" alt=""></div>
+            <div class="profile-text">
+                <h2 class="user-name">Johnny Depp</h3>
+                    <h3>Web Developer</h3>
+            </div>
+        </div>
+    </header> -->
+
+    <!-- div for background design  -->
+    <div class="background-pattern">
+
+        <section class="about-me row">
+            <h2 class="section-head"><span>about </span>me</h2>
+            <p>A competitive programmer with a knack for learning. Primarily interested in machine learning and Data Science.</p>
+        </section>
+
+        <!-- Contact Us section  -->
+        <section class="contact-section row">
+            <h2 class="section-head"><span>Contact </span>info</h2>
+            <a href="mailto:mp49410@gmail.com" class="contact-links">
+                <div class="icon-box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <!-- <h3>mail</h3> -->
+                </div>
+                mp49410@gmail.com
+            </a>
+            <a href="tel:+91 9522222232" class="contact-links">
+                <div class="icon-box">
+                    <i class="fa-solid fa-phone"></i>
+                    <!-- <h3>Call</h3> -->
+                </div>
+                +91 9522222232
+            </a>
+            <a href="https://goo.gl/maps/eGBCQvgmNmUzk1UL7" target="_blank" class="contact-links">
+                <div class="icon-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <!-- <h3>Address</h3> -->
+                </div>
+                Deepwes Technologies , 505, 5th Floor, Sky Corporate Park
+Indore, Madhya Pradesh, India
+            </a>
+            <a href="https://www.deepwes.com" target="_blank" class="contact-links">
+                <div class="icon-box">
+                    <i class="fa-solid fa-link"></i>
+                    <!-- <h3>Website</h3> -->
+                </div>
+                Deepwes
+            </a>
+        </section>
+
+
+
+        <!-- Social section  -->
+        <section class="social-section row">
+            <h2 class="section-head">Let's <span>Socialize</span></h2>
+            <div class="main-link">
+                <a href="https://www.instagram.com/mayank.ipynb/" target="_blank" class="contact-links">
+                    <div class="icon-box">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    @mayank.ipynb
+                </a>
+                <a href="https://www.linkedin.com/in/mayank0ai" target="_blank" class="contact-links">
+                    <div class="icon-box">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+                    mayank0ai
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100001011226159" target="_blank" class="contact-links">
+                    <div class="icon-box">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                    Mayank Patel
+                </a>
+            </div>
+
+            <div class="more-social-links">
+                <a href="https://www.reddit.com/user/mayank_ai" target="_blank">
+                    <i class="fa-brands fa-reddit-alien"></i>
+                </a>
+                <a href="https://twitter.com/mp49410?s=21&t=WIwgxAZuXma97T_S4UHZ1Q" target="_blank">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="https://www.github.com/mayankjv" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://wa.me/+919522222232" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+
+        </section>
+
+        <!-- Download section  -->
+        <section class="download-section row">
+            <h2 class="section-head"><span>Downloads</span></h2>
+            <div class="download-box">
+                <div class="download-links">
+                    Resume/CV
+                    <a href="resources/doc/resume.doc" download="Resume johnny_Depp">
+                        <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+                <div class="download-links">
+                    Save Contact
+                    <a href="resources/doc/Mayank_Patel.vcf" download="Mayank_Patel">
+                        <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+                <div class="download-links">
+                    Brochure
+                    <a href="resources/resume.doc" download="Brochure">
+                        <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- client section  -->
+
+        <section class="client-section">
+            <div class="row">
+                <h2 class="section-head">Our <span>Happy </span>clients</h2>
+
+                <div class="owl-carousel owl-theme">
+                    <div class="box-client item">
+                        <img src="resources/img/addidas.png" alt="">
+                    </div>
+                    <div class="box-client item">
+                        <img src="resources/img/aws.png" alt="">
+                    </div>
+                    <div class="box-client item">
+                        <img src="resources/img/azure.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial section  -->
+
+        <section class="testimonial-section row">
+            <h2 class="section-head ">Testimonials</h2>
+
+            <div class="text-align test-slider owl-carousel owl-theme">
+                <figure class="snip1533 item">
+                    <figcaption>
+                        <blockquote>
+                            <p>If you do the job badly enough, sometimes you don't get asked to do it again.</p>
+                        </blockquote>
+                        <h3>Wisteria Ravenclaw</h3>
+                        <h4>Google Inc.</h4>
+                    </figcaption>
+                </figure>
+                <figure class="snip1533 item">
+                    <figcaption>
+                        <blockquote>
+                            <p>The only skills I have the patience to learn are those that have no real application in
+                                life. </p>
+                        </blockquote>
+                        <h3>Ingredia Nutrisha</h3>
+                        <h4>Twitter</h4>
+                    </figcaption>
+                </figure>
+                <figure class="snip1533 item">
+                    <figcaption>
+                        <blockquote>
+                            <p>If you do the job badly enough, sometimes you don't get asked to do it again.</p>
+                        </blockquote>
+                        <h3>Wisteria Ravenclaw</h3>
+                        <h4>Google Inc.</h4>
+                    </figcaption>
+                </figure>
+            </div>
+
+        </section>
+
+        <!-- div for background design -->
+    </div>
+
+    <footer class="footer-section">
+        <div class="footer-container row">
+            <p>Powered by</p>
+            <h2><a href="http://deepwes.com" target="_blank"><img src="resources/img/deepwes-logo.png" alt=""></a></h2>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+    <!-- owl-carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        // Testimonial slider 
+        $('.test-slider').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: false,
+            autoplay: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        })
+
+        // Client Slider
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: false,
+            responsive: {
+                0: {
+                    items: 3
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        })
+    </script>
+
+    <script src="resources/js/script.js"></script>
+</body>
+
+</html>
